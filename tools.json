@@ -121,30 +121,6 @@
       "status": "live"
     },
     {
-      "id": "glassmorphism-generator",
-      "name": "Glassmorphism Generator",
-      "shortDescription": "Generate sleek, frosted-glass UI effects for your components.",
-      "longDescription": "## Glassmorphism Generator\n\nA visual CSS generator that allows developers and designers to instantly create frosted glass effects (glassmorphism) for UI components.\n\n### Features\n\n- Interactive sliders for blur radius, transparency (opacity), and saturation\n- Live preview area showing the glass effect overlaid on a vibrant background image or gradient\n- Color picker to adjust the glass tint (light vs dark glass)\n- Controls for border and shadow to enhance the 3D effect\n- One-click \"Copy CSS\" functionality for the generated code\n- Responsive and modern UI design\n- Works completely offline",
-      "category": "css",
-      "tags": [
-        "css",
-        "design",
-        "frontend",
-        "frosted-glass",
-        "generator",
-        "glassmorphism",
-        "ui"
-      ],
-      "techStack": [
-        "CSS3",
-        "Google Fonts",
-        "HTML5",
-        "Vanilla JS"
-      ],
-      "difficulty": "Easy",
-      "status": "live"
-    },
-    {
       "id": "favicon-generator",
       "name": "Favicon Generator",
       "shortDescription": "Generate a complete favicon pack and integration tags from any image, offline.",
@@ -213,6 +189,30 @@
       "status": "live"
     },
     {
+      "id": "glassmorphism-generator",
+      "name": "Glassmorphism Generator",
+      "shortDescription": "Generate sleek, frosted-glass UI effects for your components.",
+      "longDescription": "## Glassmorphism Generator\n\nA visual CSS generator that allows developers and designers to instantly create frosted glass effects (glassmorphism) for UI components.\n\n### Features\n\n- Interactive sliders for blur radius, transparency (opacity), and saturation\n- Live preview area showing the glass effect overlaid on a vibrant background image or gradient\n- Color picker to adjust the glass tint (light vs dark glass)\n- Controls for border and shadow to enhance the 3D effect\n- One-click \"Copy CSS\" functionality for the generated code\n- Responsive and modern UI design\n- Works completely offline",
+      "category": "css",
+      "tags": [
+        "css",
+        "design",
+        "frontend",
+        "frosted-glass",
+        "generator",
+        "glassmorphism",
+        "ui"
+      ],
+      "techStack": [
+        "CSS3",
+        "Google Fonts",
+        "HTML5",
+        "Vanilla JS"
+      ],
+      "difficulty": "Easy",
+      "status": "live"
+    },
+    {
       "id": "json-formatter",
       "name": "JSON Formatter",
       "shortDescription": "Format, validate, and minify JSON locally in your browser.",
@@ -229,6 +229,31 @@
       ],
       "techStack": [
         "Blob API",
+        "Clipboard API",
+        "CSS3",
+        "HTML5",
+        "Vanilla JS"
+      ],
+      "difficulty": "Easy",
+      "status": "live"
+    },
+    {
+      "id": "jwt-decoder",
+      "name": "JWT Decoder",
+      "shortDescription": "Decode and inspect JSON Web Tokens — header, payload, claims, and expiry — entirely in your browser.",
+      "longDescription": "## JWT Decoder\n\nA clean, offline JWT inspector that decodes any JSON Web Token and breaks it down into its three parts with syntax highlighting, standard claim parsing, and expiry detection.\n\n### Features\n\n- Colour-coded token structure (header / payload / signature)\n- Syntax-highlighted JSON for header and payload\n- Standard claims table (iss, sub, aud, exp, nbf, iat, jti) with human-readable timestamps\n- Expiry detection — shows Valid, Expired, or Decoded status badge\n- Copy individual parts (header JSON, payload JSON, signature) or all as combined JSON\n- Auto-decode on paste — no button click needed\n- Works completely offline — nothing leaves your browser",
+      "category": "json-api",
+      "tags": [
+        "auth",
+        "decoder",
+        "developer-tools",
+        "json-web-token",
+        "jwt",
+        "offline",
+        "security",
+        "token"
+      ],
+      "techStack": [
         "Clipboard API",
         "CSS3",
         "HTML5",
