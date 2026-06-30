@@ -287,34 +287,41 @@ function buildToolCards() {
 
 // ── Build resume/portfolio showcase cards (static HTML) ──
 
-function buildResumeCards() {
-  const glyph = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>';
-  return resumeThemes.map((t) =>
-    '            <article class="theme-card">' +
+function buildThemeCard(t, glyph) {
+  const screenshotHtml = t.hasScreenshot
+    ? '<img class="tc-screenshot" src="' + escapeAttr(t.screenshot) + '" alt="' + escapeAttr(t.name) + ' theme screenshot" loading="lazy" />'
+    : '<div class="tc-screenshot-placeholder">' + glyph + '</div>';
+  return '            <article class="theme-card">' +
+    screenshotHtml +
+    '<div class="tc-body">' +
     '<div class="tc-head"><span class="tc-glyph" aria-hidden="true">' + glyph + '</span><h4>' + escapeHtml(t.name) + '</h4></div>' +
     '<div class="path mono">' + escapeHtml(t.file) + '</div>' +
     '<p>' + escapeHtml(t.description) + '</p>' +
     '<a class="preview-btn" href="' + escapeAttr(t.file) + '" target="_blank" rel="noopener noreferrer">Preview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>' +
-    '</article>'
-  ).join("\n");
+    '</div></article>';
+}
+
+function buildResumeCards() {
+  const glyph = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>';
+  return resumeThemes.map((t) => buildThemeCard(t, glyph)).join("\n");
 }
 
 function buildPortfolioCards() {
   const glyph = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>';
-  return portfolioThemes.map((t) =>
-    '            <article class="theme-card">' +
-    '<div class="tc-head"><span class="tc-glyph" aria-hidden="true">' + glyph + '</span><h4>' + escapeHtml(t.name) + '</h4></div>' +
-    '<div class="path mono">' + escapeHtml(t.file) + '</div>' +
-    '<p>' + escapeHtml(t.description) + '</p>' +
-    '<a class="preview-btn" href="' + escapeAttr(t.file) + '" target="_blank" rel="noopener noreferrer">Preview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>' +
-    '</article>'
-  ).join("\n");
+  return portfolioThemes.map((t) => buildThemeCard(t, glyph)).join("\n");
 }
 
 // Resume & portfolio theme data from themes.json
 const themesData = JSON.parse(fs.readFileSync(path.join(__dirname, "themes.json"), "utf-8"));
-const resumeThemes = themesData.resume.map((t) => ({ ...t, file: t.file.replace(/\.hbs$/, ".html") }));
-const portfolioThemes = themesData.portfolio.map((t) => ({ ...t, file: t.file.replace(/\.hbs$/, ".html") }));
+function mapTheme(t) {
+  return {
+    ...t,
+    file: t.file.replace(/\.hbs$/, ".html"),
+    hasScreenshot: t.screenshot && fs.existsSync(path.join(__dirname, t.screenshot))
+  };
+}
+const resumeThemes = themesData.resume.map(mapTheme);
+const portfolioThemes = themesData.portfolio.map(mapTheme);
 
 // Build JSON data for the script block (used by modal + search)
 const siteJson = JSON.stringify({ title: site.title, tagline: site.tagline, url: site.url, github: site.github });

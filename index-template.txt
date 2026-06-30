@@ -807,10 +807,10 @@
         border: 1px solid var(--border);
         background: var(--surface);
         border-radius: var(--radius);
-        padding: 22px;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 0;
         transition:
           transform var(--t) var(--ease),
           border-color var(--t) var(--ease),
@@ -820,6 +820,30 @@
         transform: translateY(-3px);
         border-color: var(--border-strong);
         box-shadow: var(--shadow-lift);
+      }
+      .theme-card .tc-screenshot {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface-2);
+      }
+      .theme-card .tc-screenshot-placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        background: var(--surface-2);
+        border-bottom: 1px solid var(--border);
+        color: var(--text-faint);
+      }
+      .theme-card .tc-body {
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
       }
       .theme-card .tc-head {
         display: flex;

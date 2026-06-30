@@ -369,11 +369,16 @@ Add an entry for your theme in `themes.json` under the `"resume"` or `"portfolio
   "name": "Minimal",
   "description": "A brief description of your theme's style and features.",
   "file": "resume/themes/minimal.hbs",
+  "screenshot": "resume/themes/minimal.png",
   "author": "Your Name"
 }
 ```
 
 This is how your theme appears on the landing page — similar to how `tools.json` works for tools.
+
+### Add a screenshot
+
+Take a screenshot of your generated theme and save it as a `.png` file next to the `.hbs` template (same name, e.g., `resume/themes/minimal.png`). The screenshot is shown on the landing page theme card.
 
 ### Build and test
 
@@ -386,7 +391,7 @@ open resume/themes/minimal.html
 ### Submit
 
 ```bash
-git add resume/themes/minimal.hbs themes.json
+git add resume/themes/minimal.hbs resume/themes/minimal.png themes.json
 git commit -m "Add: resume theme — minimal"
 ```
 
