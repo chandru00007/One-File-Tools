@@ -278,7 +278,7 @@ Beyond tools, you can contribute **resume** and **portfolio** themes. Each theme
 ### How it works
 
 1. `profile.json` contains sample profile data (personal info, experience, skills, projects, etc.)
-2. `theme-gen.js` discovers all `.hbs` files in `resume/themes/` and `portfolio/themes/`
+2. `theme-gen.js` discovers all `.hbs` files in `resume/` and `portfolio/`
 3. Each template is compiled with Handlebars, producing a matching `.html` file
 
 ### Creating a theme
@@ -287,10 +287,10 @@ Beyond tools, you can contribute **resume** and **portfolio** themes. Each theme
 git checkout -b add/resume-theme-minimal
 ```
 
-Create your template file (e.g., `resume/themes/minimal.hbs` or `portfolio/themes/creative.hbs`). Look at the existing templates for reference:
+Create your template file (e.g., `resume/minimal.hbs` or `portfolio/creative.hbs`). Look at the existing templates for reference:
 
-- `resume/themes/classic.hbs` — clean, print-ready A4 resume
-- `portfolio/themes/developer.hbs` — dark, developer-focused portfolio
+- `resume/classic.hbs` — clean, print-ready A4 resume
+- `portfolio/developer.hbs` — dark, developer-focused portfolio
 
 ### Available template data
 
@@ -374,26 +374,26 @@ Add an entry for your theme in `themes.json` under the `"resume"` or `"portfolio
 
 This is how your theme appears on the landing page — similar to how `tools.json` works for tools. Everything is derived from the `id`:
 
-- `resume/themes/minimal.hbs` — the Handlebars template
-- `resume/themes/minimal.png` — the screenshot
-- `resume/themes/minimal.html` — the generated output
+- `resume/minimal.hbs` — the Handlebars template
+- `resume/minimal.png` — the screenshot
+- `resume/minimal.html` — the generated output
 
 ### Add a screenshot
 
-Take a screenshot of your generated theme and save it as `[id].png` next to the `.hbs` template (e.g., `resume/themes/minimal.png`). The screenshot is shown on the landing page theme card.
+Take a screenshot of your generated theme and save it as `[id].png` next to the `.hbs` template (e.g., `resume/minimal.png`). The screenshot is shown on the landing page theme card.
 
 ### Build and test
 
 ```bash
 npm install                    # Install Handlebars (first time only)
 node theme-gen.js              # Generate HTML from all .hbs templates
-open resume/themes/minimal.html
+open resume/minimal.html
 ```
 
 ### Submit
 
 ```bash
-git add resume/themes/minimal.hbs resume/themes/minimal.png themes.json
+git add resume/minimal.hbs resume/minimal.png themes.json
 git commit -m "Add: resume theme — minimal"
 ```
 

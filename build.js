@@ -316,7 +316,7 @@ function buildPortfolioCards() {
 const themesData = JSON.parse(fs.readFileSync(path.join(__dirname, "themes.json"), "utf-8"));
 function mapTheme(pillar) {
   return function (t) {
-    var base = pillar + "/themes/" + t.id;
+    var base = pillar + "/" + t.id;
     return {
       ...t,
       file: base + ".html",

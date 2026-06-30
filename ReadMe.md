@@ -242,14 +242,14 @@ One-File-Tools/
 │   ├── json-formatter.html
 │   ├── json-formatter.png
 │   └── ...
-├── resume/               # Pillar 2: Resume themes
-│   └── themes/
-│       ├── classic.hbs   # Handlebars template (contributor-created)
-│       └── classic.html  # Generated output
-├── portfolio/            # Pillar 3: Portfolio themes
-│   └── themes/
-│       ├── developer.hbs # Handlebars template (contributor-created)
-│       └── developer.html# Generated output
+├── resume/               # Pillar 2: Resume themes ([id].hbs + [id].png + [id].html)
+│   ├── classic.hbs       # Handlebars template
+│   ├── classic.png       # Screenshot
+│   └── classic.html      # Generated output
+├── portfolio/            # Pillar 3: Portfolio themes ([id].hbs + [id].png + [id].html)
+│   ├── developer.hbs     # Handlebars template
+│   ├── developer.png     # Screenshot
+│   └── developer.html    # Generated output
 ├── profile.json          # Sample data file for resume & portfolio generation
 ├── tools.json            # Tool registry (tools metadata for landing page)
 ├── themes.json           # Theme registry (resume/portfolio metadata for landing page)

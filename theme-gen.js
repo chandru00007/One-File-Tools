@@ -171,8 +171,8 @@ function buildContext(profile) {
 // ──────────────────────────────────────────────
 
 var themeDirs = [
-  path.join(__dirname, "resume", "themes"),
-  path.join(__dirname, "portfolio", "themes")
+  path.join(__dirname, "resume"),
+  path.join(__dirname, "portfolio")
 ];
 
 var ctx = buildContext(profile);
@@ -202,5 +202,5 @@ themeDirs.forEach(function (dir) {
 if (count > 0) {
   console.log("\nGenerated " + count + " theme" + (count === 1 ? "" : "s") + " from profile.json.");
 } else {
-  console.log("No .hbs template files found in resume/themes/ or portfolio/themes/.");
+  console.log("No .hbs template files found in resume/ or portfolio/.");
 }
