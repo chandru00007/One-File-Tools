@@ -159,6 +159,8 @@ Below is a curated list of tool ideas waiting to be built. Each idea is a potent
 | Text Diff Viewer — compare two blocks of text side by side    | Medium     |
 | Unicode Inspector — inspect Unicode characters and codepoints | Easy       |
 | HTML Entity Converter — encode/decode HTML entities and Unicode escapes | Easy |
+| JSON to TypeScript — paste JSON, get TypeScript interfaces                   | Easy       |
+| Readme Template Generator — fill a form, get a polished README.md            | Easy       |
 
 ### JSON & API
 
@@ -190,6 +192,9 @@ Below is a curated list of tool ideas waiting to be built. Each idea is a potent
 | Commit Message Generator — create conventional commit messages | Easy     |
 | Chmod Calculator — toggle permission bits, see numeric and symbolic notation | Easy |
 | Crontab Explainer — paste a cron expression, see next 5 run times in plain English | Easy |
+| Epoch Converter — convert between Unix timestamps and human-readable dates   | Easy       |
+| JWT Builder — create and sign JWTs with custom payloads for testing          | Medium     |
+| Diff Patch Applier — paste a unified diff and see the result applied         | Medium     |
 
 ### Browser & Network
 
@@ -201,6 +206,9 @@ Below is a curated list of tool ideas waiting to be built. Each idea is a potent
 | LocalStorage Explorer — browse and edit localStorage         | Easy       |
 | HTTP Header Inspector — view response headers for a URL      | Medium     |
 | DNS Record Lookup — query A, AAAA, MX, TXT, CNAME via DNS-over-HTTPS | Medium |
+| WebSocket Tester — connect to a WS endpoint, send/receive messages          | Medium     |
+| CORS Debugger — explain CORS errors and suggest fixes                        | Easy       |
+| LinkedIn Timestamp Finder — extract the hidden post date from a LinkedIn URL | Easy       |
 
 ### Accessibility
 
@@ -210,6 +218,56 @@ Below is a curated list of tool ideas waiting to be built. Each idea is a potent
 | Heading Structure Visualizer — visualize heading hierarchy   | Easy       |
 | Alt Text Helper — preview and validate image alt text        | Easy       |
 | ARIA Role Reference — quick reference for ARIA roles         | Easy       |
+
+### Quests — Interactive Games & Challenges
+
+Quests are playable, gamified lessons — single HTML files that teach through interaction, not just display. Progress is saved via `localStorage`. See the [Quests Contributing Guide](quests/Contributing.md) for details.
+
+#### CSS Quests
+
+| Idea                                                                        | Difficulty |
+| --------------------------------------------------------------------------- | ---------- |
+| Flexbox Froggy — position items using flexbox properties                     | Medium     |
+| Grid Garden — water crops by writing CSS Grid rules                          | Medium     |
+| Selector Showdown — write the CSS selector that matches highlighted elements | Easy       |
+| Specificity Wars — guess which selector wins in a head-to-head              | Easy       |
+| Box Model Detective — debug padding/margin/border visual puzzles            | Easy       |
+| Transition Builder Challenge — match a target animation using CSS transitions| Medium     |
+
+#### JavaScript Quests
+
+| Idea                                                                           | Difficulty |
+| ------------------------------------------------------------------------------ | ---------- |
+| Array Method Pipeline — chain `.map`, `.filter`, `.reduce` to hit the target   | Easy       |
+| Closure Escape Room — solve puzzles that require understanding closures         | Medium     |
+| Promise Pipeline — chain async operations in the correct order                 | Medium     |
+| Event Loop Predictor — predict `console.log` output order                      | Medium     |
+| Type Coercion Gauntlet — guess what `==` returns for tricky JS comparisons     | Easy       |
+| Scope Chain Debugger — trace variable lookups through nested scopes            | Medium     |
+| Destructuring Puzzle — extract the right values from nested objects/arrays     | Easy       |
+
+#### Git Quests
+
+| Idea                                                                        | Difficulty |
+| --------------------------------------------------------------------------- | ---------- |
+| Branch Navigator — navigate a commit graph using git commands               | Medium     |
+| Merge Conflict Arena — practice resolving realistic merge conflicts         | Medium     |
+| Git Bisect Detective — binary search to find the bug-introducing commit     | Easy       |
+| Interactive Rebase Simulator — reorder, squash, and edit commits visually   | Medium     |
+| Cherry-Pick Challenge — pick the right commits to build a release           | Easy       |
+
+#### General Dev Quests
+
+| Idea                                                                           | Difficulty |
+| ------------------------------------------------------------------------------ | ---------- |
+| HTTP Status Code Quiz — guess the right status code for a scenario             | Easy       |
+| Regex Golf — write the shortest regex to match/reject string sets              | Medium     |
+| Terminal Speed Run — complete CLI tasks against the clock                       | Medium     |
+| Binary & Hex Trainer — convert numbers between bases under time pressure       | Easy       |
+| SQL Query Challenge — write queries to match expected output tables             | Medium     |
+| Keyboard Shortcut Dojo — learn VS Code / Vim shortcuts through timed drills    | Easy       |
+| API Design Review — spot the REST anti-patterns in mock API designs            | Easy       |
+| Accessibility Audit Quest — find and fix a11y issues in broken HTML snippets   | Medium     |
 
 > **Don't see your idea?** Use the [New Tool Idea](https://github.com/praveenscience/One-File-Tools/issues/new?template=new-tool-idea.yml) issue template to propose it!
 >
@@ -265,7 +323,8 @@ One-File-Tools/
 ├── data/                 # Structured data that feeds the builds
 │   ├── profile.json      # Sample data for resume & portfolio generation
 │   ├── tools.json        # Tool registry (metadata for landing page)
-│   └── themes.json       # Theme registry (resume/portfolio metadata)
+│   ├── themes.json       # Theme registry (resume/portfolio metadata)
+│   └── quests.json       # Quest registry (interactive learning games)
 ├── scripts/              # Build tooling
 │   ├── build.js          # Generates index.html (landing page)
 │   ├── theme-gen.js      # Generates resume/portfolio HTML from .hbs + profile.json
@@ -282,6 +341,8 @@ One-File-Tools/
 ├── portfolio/            # Pillar 3: Portfolio themes ([id].hbs + [id].png)
 │   ├── developer.hbs     # Handlebars template
 │   └── developer.png     # Screenshot
+├── quests/               # Pillar 4: Interactive learning quests & games
+│   └── Contributing.md   # Quest-specific contribution guide
 ├── Contributing.md       # Contribution guide
 ├── index.html            # Generated: landing page (gitignored)
 ├── ReadMe.md             # This file
