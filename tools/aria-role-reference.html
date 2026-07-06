@@ -411,7 +411,7 @@ Built for One File Tools.
           attributes: ["aria-pressed", "aria-expanded", "aria-disabled", "aria-label"],
           semantic: "Use the native <button> element instead — it is focusable, keyboard-operable, and announced correctly for free.",
           example: '<div role="button" tabindex="0" aria-pressed="false">\n  Toggle\n</div>\n\n<!-- Preferred -->\n<button type="button">Toggle</button>',
-          mistakes: ["Forgetting tabindex=\"0\" so keyboard users can't focus it.", "Not handling Enter and Space key events.", "Using it when a real <button> would work."]
+          mistakes: ['Forgetting tabindex="0" so keyboard users can\'t focus it.', "Not handling Enter and Space key events.", "Using it when a real <button> would work."]
         },
         {
           name: "dialog",
@@ -429,12 +429,12 @@ Built for One File Tools.
           attributes: ["aria-live (implicit assertive)", "aria-atomic"],
           semantic: "No exact native equivalent; use sparingly for genuinely urgent messages.",
           example: '<div role="alert">\n  Your session will expire in 1 minute.\n</div>',
-          mistakes: ["Using it for non-urgent status (use role=\"status\" instead).", "Rendering it empty on load then filling it (announce timing issues).", "Overusing alerts, which overwhelms users."]
+          mistakes: ['Using it for non-urgent status (use role="status" instead).', "Rendering it empty on load then filling it (announce timing issues).", "Overusing alerts, which overwhelms users."]
         },
         {
           name: "status",
           category: "Live Region",
-          purpose: "A polite live region for advisory, non-urgent status updates (e.g. \"Saved\").",
+          purpose: 'A polite live region for advisory, non-urgent status updates (e.g. "Saved").',
           attributes: ["aria-live (implicit polite)", "aria-atomic"],
           semantic: "The <output> element carries an implicit status role in many contexts.",
           example: '<div role="status">\n  3 items added to cart\n</div>',
@@ -455,7 +455,7 @@ Built for One File Tools.
           purpose: "The primary content of the document, unique per page.",
           attributes: ["aria-label", "aria-labelledby"],
           semantic: "Use the native <main> element — implicit main role.",
-          example: '<main>\n  <h1>Article title</h1>\n  <p>…</p>\n</main>',
+          example: "<main>\n  <h1>Article title</h1>\n  <p>…</p>\n</main>",
           mistakes: ["Having more than one main landmark per page.", "Putting repeated site chrome (headers/footers) inside it."]
         },
         {
@@ -463,7 +463,7 @@ Built for One File Tools.
           category: "Widget",
           purpose: "A single tab in a tablist that, when activated, displays its associated tabpanel.",
           attributes: ["aria-selected", "aria-controls", "tabindex"],
-          semantic: "No native element; must be composed with role=\"tablist\" and role=\"tabpanel\".",
+          semantic: 'No native element; must be composed with role="tablist" and role="tabpanel".',
           example: '<div role="tablist">\n  <button role="tab" aria-selected="true" aria-controls="p1" id="t1">One</button>\n  <button role="tab" aria-selected="false" aria-controls="p2" id="t2">Two</button>\n</div>\n<div role="tabpanel" id="p1" aria-labelledby="t1">…</div>',
           mistakes: ["Not implementing arrow-key navigation between tabs.", "Missing aria-controls linking the tab to its panel.", "Leaving all tabs in the tab order (use roving tabindex)."]
         },
@@ -472,7 +472,7 @@ Built for One File Tools.
           category: "Widget",
           purpose: "The content container associated with a tab.",
           attributes: ["aria-labelledby", "tabindex"],
-          semantic: "No native element; pair with role=\"tab\" and role=\"tablist\".",
+          semantic: 'No native element; pair with role="tab" and role="tablist".',
           example: '<div role="tabpanel" id="p1" aria-labelledby="t1" tabindex="0">\n  Panel content\n</div>',
           mistakes: ["Not labelling the panel via aria-labelledby pointing to its tab.", "Showing multiple panels at once."]
         },
@@ -481,7 +481,7 @@ Built for One File Tools.
           category: "Widget",
           purpose: "A checkable input with a true/false (or mixed) state.",
           attributes: ["aria-checked", "aria-disabled", "tabindex"],
-          semantic: "Use <input type=\"checkbox\"> — native state, keyboard, and label association.",
+          semantic: 'Use <input type="checkbox"> — native state, keyboard, and label association.',
           example: '<div role="checkbox" aria-checked="false" tabindex="0">\n  Subscribe\n</div>\n\n<!-- Preferred -->\n<label><input type="checkbox"> Subscribe</label>',
           mistakes: ["Forgetting to toggle aria-checked in script.", "No Space-key handler.", "Reinventing what the native input gives free."]
         },
@@ -490,9 +490,9 @@ Built for One File Tools.
           category: "Widget",
           purpose: "A list of choices/actions, typically an application menu (not site navigation).",
           attributes: ["aria-labelledby", "aria-orientation"],
-          semantic: "No native element; do NOT use for regular site nav links — that's role=\"navigation\".",
+          semantic: 'No native element; do NOT use for regular site nav links — that\'s role="navigation".',
           example: '<ul role="menu">\n  <li role="menuitem" tabindex="-1">Cut</li>\n  <li role="menuitem" tabindex="-1">Copy</li>\n</ul>',
-          mistakes: ["Using role=\"menu\" for website navigation bars.", "Missing arrow-key navigation and roving tabindex."]
+          mistakes: ['Using role="menu" for website navigation bars.', "Missing arrow-key navigation and roving tabindex."]
         },
         {
           name: "tooltip",
@@ -517,7 +517,7 @@ Built for One File Tools.
           category: "Landmark",
           purpose: "A landmark region containing search functionality for the site or page.",
           attributes: ["aria-label", "aria-labelledby"],
-          semantic: "No native element yet; commonly applied to a <form role=\"search\">.",
+          semantic: 'No native element yet; commonly applied to a <form role="search">.',
           example: '<form role="search">\n  <label for="q">Search</label>\n  <input id="q" type="search" />\n</form>',
           mistakes: ["Applying it to non-search forms.", "Having multiple search landmarks without labels."]
         },
@@ -536,7 +536,7 @@ Built for One File Tools.
           purpose: "Footer information about the document (copyright, links, contact).",
           attributes: ["aria-label"],
           semantic: "Use the native <footer> at the top level — implicit contentinfo role.",
-          example: '<footer>\n  <p>© 2026 Acme</p>\n</footer>',
+          example: "<footer>\n  <p>© 2026 Acme</p>\n</footer>",
           mistakes: ["Multiple contentinfo landmarks per page.", "Nesting <footer> inside sectioning content expecting the landmark."]
         },
         {
@@ -544,7 +544,7 @@ Built for One File Tools.
           category: "Widget",
           purpose: "An on/off toggle, like a light switch — a checkbox with on/off rather than checked semantics.",
           attributes: ["aria-checked", "tabindex", "aria-label"],
-          semantic: "Use <input type=\"checkbox\" role=\"switch\"> to keep native behavior with switch semantics.",
+          semantic: 'Use <input type="checkbox" role="switch"> to keep native behavior with switch semantics.',
           example: '<button role="switch" aria-checked="true">\n  Wi-Fi\n</button>',
           mistakes: ["Confusing it with checkbox when a simple check is more appropriate.", "Not toggling aria-checked in script."]
         },
@@ -620,7 +620,7 @@ Built for One File Tools.
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "role-btn" + (role.name === selectedRole ? " active" : "");
-          btn.textContent = "role=\"" + role.name + "\"";
+          btn.textContent = 'role="' + role.name + '"';
           btn.addEventListener("click", () => {
             selectedRole = role.name;
             renderList();
@@ -639,14 +639,7 @@ Built for One File Tools.
         const attrChips = role.attributes.map((a) => '<span class="chip">' + escapeHtml(a) + "</span>").join("");
         const mistakes = role.mistakes.map((m) => "<li>" + escapeHtml(m) + "</li>").join("");
 
-        detail.innerHTML =
-          '<h2>role="' + escapeHtml(role.name) + '"</h2>' +
-          '<div class="role-category">' + escapeHtml(role.category) + " role</div>" +
-          '<div class="detail-section"><h3>Purpose</h3><p>' + escapeHtml(role.purpose) + "</p></div>" +
-          '<div class="detail-section"><h3>Common attributes</h3><div class="chip-row">' + attrChips + "</div></div>" +
-          '<div class="detail-section"><h3>Semantic HTML alternative</h3><div class="semantic-note">' + role.semantic.replace(/<([a-z0-9]+)>/gi, "<code>&lt;$1&gt;</code>").replace(/role="([^"]+)"/g, '<code>role="$1"</code>') + "</div></div>" +
-          '<div class="detail-section"><h3>Example</h3><div class="code-block"><button class="copy-btn" type="button" id="copyExample">Copy</button>' + escapeHtml(role.example) + "</div></div>" +
-          '<div class="detail-section"><h3>Common mistakes</h3><ul class="mistake-list">' + mistakes + "</ul></div>";
+        detail.innerHTML = '<h2>role="' + escapeHtml(role.name) + '"</h2>' + '<div class="role-category">' + escapeHtml(role.category) + " role</div>" + '<div class="detail-section"><h3>Purpose</h3><p>' + escapeHtml(role.purpose) + "</p></div>" + '<div class="detail-section"><h3>Common attributes</h3><div class="chip-row">' + attrChips + "</div></div>" + '<div class="detail-section"><h3>Semantic HTML alternative</h3><div class="semantic-note">' + role.semantic.replace(/<([a-z0-9]+)>/gi, "<code>&lt;$1&gt;</code>").replace(/role="([^"]+)"/g, '<code>role="$1"</code>') + "</div></div>" + '<div class="detail-section"><h3>Example</h3><div class="code-block"><button class="copy-btn" type="button" id="copyExample">Copy</button>' + escapeHtml(role.example) + "</div></div>" + '<div class="detail-section"><h3>Common mistakes</h3><ul class="mistake-list">' + mistakes + "</ul></div>";
 
         const copyBtn = document.getElementById("copyExample");
         if (copyBtn) {
