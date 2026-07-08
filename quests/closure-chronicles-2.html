@@ -454,7 +454,9 @@
       }
 
       function saveProgress() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        } catch (e) {}
       }
 
       let progress = loadProgress();
@@ -492,7 +494,7 @@
       }
 
       function renderTitle() {
-        renderScreen(`<div class="hero screen"><div class="hero-badge">JavaScript Fundamentals</div><h1 class="hero-title">Closure Chronicles</h1><p class="hero-sub">Test your understanding of closures and lexical scoping through 10 interactive puzzles</p><div class="actions"><button class="btn btn-primary" onclick="startGame()">Start Quest</button></div></div>`);
+        renderScreen(`<div class="wrap"><div class="hero screen"><div class="hero-badge">JavaScript Fundamentals</div><h1 class="hero-title">Closure Chronicles</h1><p class="hero-sub">Test your understanding of closures and lexical scoping through 10 interactive puzzles</p><div class="actions"><button class="btn btn-primary" onclick="startGame()">Start Quest</button></div></div></div>`);
       }
 
       function startGame() {
